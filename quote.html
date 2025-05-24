@@ -6,31 +6,27 @@
 </head>
 <body>
 
-  <!-- NAV (identical across pages) -->
+  <!-- NAV -->
   <nav>
     <img src="images/ChatGPT Image May 24, 2025, 01_02_26 AM.png" alt="StreamlinedIT logo">
     <ul>
       <li><a href="index.html">Home</a></li>
-
       <li class="has-dropdown">
         <a href="services.html">Services ▾</a>
         <div class="dropdown">
-          <a href="services.html#media"><strong>Media-Center Setups</strong></a>
-          <a href="services.html#security"><strong>Security Install&nbsp;&amp;&nbsp;Maintenance</strong></a>
+          <a href="services.html#security"><strong>Security &amp; Integrations</strong></a>
         </div>
       </li>
-
       <li><a href="quote.html">Get a Quote</a></li>
-      <li><a href="tel:+16135550123">Call&nbsp;(613)&nbsp;555-0123</a></li>
+      <li><a href="tel:+16135550123">Call (613) 555-0123</a></li>
     </ul>
   </nav>
 
-  <!-- FORM CARD -->
+  <!-- QUOTE FORM -->
   <div class="quote-wrapper">
     <form class="form-card" action="https://formsubmit.co/quotes@streamlinedit.ca" method="POST">
       <h2>Request a Quote</h2>
 
-      <!-- change the redirect URL to your deployed domain -->
       <input type="hidden" name="_redirect" value="https://streamlinedit.ca/quote.html#thanks">
 
       <label>Name
@@ -43,8 +39,7 @@
 
       <label>Service
         <select name="service">
-          <option value="Media-Center Setups">Media-Center Setups</option>
-          <option value="Security Installation & Maintenance">Security Installation & Maintenance</option>
+          <option value="Security & Integrations">Security &amp; Integrations</option>
         </select>
       </label>
 
@@ -63,7 +58,7 @@
   <script>
     if (location.hash === '#thanks'){
       document.getElementById('thanks').style.display = 'block';
-      location.hash = '';            /* prevent it from showing after reload */
+      location.hash = '';
     }
   </script>
 </body>
