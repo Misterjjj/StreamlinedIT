@@ -1,0 +1,90 @@
+/* ───────── THEME VARIABLES ───────── */
+:root{
+  --brand:#2563eb;          /* blue-600   */
+  --brand-light:#3b82f6;    /* blue-500   */
+  --gray:#64748b;           /* slate-500  */
+  --radius:0.75rem;
+  --shadow:0 4px 12px rgba(0,0,0,.08);
+  font-family:system-ui, sans-serif;
+}
+
+/* ───────── RESET ───────── */
+*{box-sizing:border-box;margin:0;padding:0}
+img{display:block;max-width:100%}
+a{color:var(--brand);text-decoration:none}
+a:hover{color:var(--brand-light)}
+body{
+  line-height:1.6;color:var(--gray);
+  /* subtle radial fade */
+  background:radial-gradient(circle at 50% 0%, #f9fbff 0%, #eef3ff 60%, #ffffff 100%);
+}
+
+/* ───────── NAVIGATION ───────── */
+nav{
+  display:flex;flex-direction:column;align-items:center;
+  background:#fff;border-bottom:1px solid #e5e7eb;
+}
+nav img{height:48px;margin:0.5rem 0}
+nav ul{display:flex;gap:1.5rem;list-style:none;font-weight:600;padding:0.75rem 2rem;flex-wrap:wrap;justify-content:center}
+nav li{position:relative}
+nav li.has-dropdown:hover .dropdown,
+nav li.has-dropdown:focus-within .dropdown{display:block}
+
+/* dropdown */
+.dropdown{
+  display:none;position:absolute;top:100%;left:-1rem;z-index:100;
+  background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);
+  box-shadow:var(--shadow);min-width:240px;padding:0.75rem;
+}
+.dropdown a{display:block;padding:0.5rem 0;color:inherit}
+.dropdown a p{font-size:0.8rem;color:var(--gray);margin-top:2px}
+
+/* ───────── HERO / SECTION TITLES ───────── */
+.hero{max-width:760px;margin:3rem auto 2rem;padding:0 1rem;text-align:center}
+.hero h1{font-size:2.75rem;color:#334155;margin-bottom:.4rem}
+.hero p{font-size:1.25rem}
+section h2{font-size:1.75rem;color:#334155;margin-bottom:1rem}
+
+/* ───────── GLOBAL BUTTON ───────── */
+.btn{
+  display:inline-block;margin-top:1.75rem;padding:.65rem 1.4rem;
+  border-radius:var(--radius);background:var(--brand);color:#fff;font-weight:600
+}
+.btn:hover{background:var(--brand-light)}
+
+/* ───────── GRID CONTAINERS ───────── */
+.container{max-width:1100px;margin:auto;padding:0 1rem}
+
+/* ───────── “CORE SERVICE” CARDS ───────── */
+.card{
+  border:1px solid #e5e7eb;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);background:#fff;transition:transform .15s;
+}
+.card:hover{transform:translateY(-4px)}
+.card img{height:180px;object-fit:cover;width:100%}
+.card h3{margin:1rem 1rem 0;font-size:1.1rem;color:#1e293b}
+.card p{margin:0.5rem 1rem 1.25rem;font-size:.9rem}
+
+/* ───────── DETAIL SECTIONS (services.html) ───────── */
+.detail{
+  display:flex;gap:2rem;align-items:center;flex-wrap:wrap;margin-bottom:4rem
+}
+.detail:nth-child(even){flex-direction:row-reverse}
+.detail img{flex:0 0 300px;max-width:300px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.detail div{flex:1 1 320px}
+.detail h3{font-size:1.5rem;margin-bottom:.5rem;color:#1e293b}
+
+/* ───────── QUOTE FORM ───────── */
+.quote-wrapper{display:flex;justify-content:center;padding-bottom:4rem}
+.form-card{
+  background:#fff;box-shadow:var(--shadow);border:1px solid #e5e7eb;
+  border-radius:var(--radius);padding:2rem;max-width:520px;width:100%;
+}
+.form-card h2{font-size:2rem;margin-bottom:1rem;text-align:center;color:#334155}
+label{display:block;margin-top:1rem;font-weight:500;color:#1e293b}
+input,textarea,select{
+  width:100%;padding:.6rem;border:1px solid #e5e7eb;
+  border-radius:var(--radius);margin-top:.35rem;font-size:0.95rem
+}
+textarea{resize:vertical;min-height:120px}
+.form-card .btn{width:100%;margin-top:1.5rem;text-align:center}
