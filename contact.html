@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Full Shibang – StreamlinedIT</title>
+  <title>Contact Us – StreamlinedIT</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
 <nav>
   <img src="images/ChatGPT Image May 24, 2025, 01_02_26 AM.png" alt="StreamlinedIT logo">
   <ul>
@@ -37,28 +37,52 @@
   </ul>
 </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <h1>Full Shibang</h1>
-    <p>Turnkey, end-to-end deployment of Video, Access Control & POS—pre-configured, tested and documented.</p>
-    <a class="btn" href="quote.html">Request a Quote</a>
-  </header>
 
-  <!-- DETAILS -->
-  <section class="container">
-    <div class="detail">
-      <img src="images/integration-overview.png" alt="Integrated system overview">
-      <div>
-        <h3>What’s Included</h3>
-        <ul>
-          <li>All Video, Access & POS features</li>
-          <li>Custom orchestration scripts (Node/Python)</li>
-          <li>Unified dashboard & real-time alerts</li>
-          <li>Proactive health checks & firmware updates</li>
-        </ul>
+  <!-- CONTACT FORM -->
+  <div class="quote-wrapper">
+    <form class="form-card"
+          action="https://formsubmit.co/quotes@streamlinedit.ca"
+          method="POST">
+      <h2>Contact Us</h2>
+
+      <!-- redirect to thank-you anchor -->
+      <input type="hidden" name="_redirect" value="contact.html#thanks">
+
+      <label>Name
+        <input name="name" required>
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Subject
+        <input name="subject" placeholder="Brief subject…">
+      </label>
+
+      <label>Message
+        <textarea name="message" placeholder="How can we help?"></textarea>
+      </label>
+
+      <button class="btn">Send Inquiry</button>
+
+      <div id="thanks"
+           style="display:none;margin-top:1rem;color:var(--brand);font-weight:600;text-align:center">
+        Thanks! We’ll be in touch shortly.
       </div>
-    </div>
-  </section>
+
+      <p style="margin-top:2rem;text-align:center">
+        Or give us a call at <strong>(613) 555-0123</strong>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    if (location.hash === '#thanks') {
+      document.getElementById('thanks').style.display = 'block';
+      history.replaceState(null,'','contact.html');
+    }
+  </script>
 
 </body>
 </html>
