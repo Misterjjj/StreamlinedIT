@@ -1,4 +1,5 @@
-<!doctype html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Request a Quote – StreamlinedIT</title>
@@ -6,17 +7,47 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION (identical on every page) -->
   <nav>
     <img src="images/ChatGPT Image May 24, 2025, 01_02_26 AM.png" alt="StreamlinedIT logo">
     <ul>
       <li><a href="index.html">Home</a></li>
+
+      <!-- Services dropdown -->
       <li class="has-dropdown">
         <a href="services.html">Services ▾</a>
         <div class="dropdown">
-          <a href="services.html#security"><strong>Security &amp; Integrations</strong></a>
+          <a href="video-security.html">
+            <strong>Video Security</strong>
+            <p>Camera installs &amp; monitoring</p>
+          </a>
+          <a href="access-control.html">
+            <strong>Access Control</strong>
+            <p>Door &amp; credential management</p>
+          </a>
+          <a href="pos-integration.html">
+            <strong>POS Integration</strong>
+            <p>Sales &amp; transaction hooks</p>
+          </a>
+          <a href="full-shibang.html">
+            <strong>Full Shibang</strong>
+            <p>End-to-end turnkey solution</p>
+          </a>
         </div>
       </li>
+
+      <!-- Your Business dropdown -->
+      <li class="has-dropdown">
+        <a href="services.html#biz-retail">Your Business ▾</a>
+        <div class="dropdown">
+          <a href="retail.html"><strong>Retail &amp; Shops</strong></a>
+          <a href="restaurant.html"><strong>Restaurants &amp; Bars</strong></a>
+          <a href="office.html"><strong>Offices &amp; Co-working</strong></a>
+          <a href="warehouse.html"><strong>Warehouses &amp; Storage</strong></a>
+          <a href="medical.html"><strong>Healthcare &amp; Clinics</strong></a>
+        </div>
+      </li>
+
       <li><a href="quote.html">Get a Quote</a></li>
       <li><a href="tel:+16135550123">Call (613) 555-0123</a></li>
     </ul>
@@ -24,10 +55,15 @@
 
   <!-- QUOTE FORM -->
   <div class="quote-wrapper">
-    <form class="form-card" action="https://formsubmit.co/quotes@streamlinedit.ca" method="POST">
+    <form class="form-card"
+          action="https://formsubmit.co/quotes@streamlinedit.ca"
+          method="POST">
       <h2>Request a Quote</h2>
 
-      <input type="hidden" name="_redirect" value="https://streamlinedit.ca/quote.html#thanks">
+      <!-- Redirect to thank-you -->
+      <input type="hidden"
+             name="_redirect"
+             value="https://streamlinedit.ca/quote.html#thanks">
 
       <label>Name
         <input name="name" required>
@@ -38,27 +74,32 @@
       </label>
 
       <label>Service
-        <select name="service">
-          <option value="Security & Integrations">Security &amp; Integrations</option>
+        <select name="service" required>
+          <option value="">Select a service…</option>
+          <option value="Video Security">Video Security</option>
+          <option value="Access Control">Access Control</option>
+          <option value="POS Integration">POS Integration</option>
+          <option value="Full Shibang">Full Shibang (End-to-End)</option>
         </select>
       </label>
 
       <label>Details / notes
-        <textarea name="details"></textarea>
+        <textarea name="details" placeholder="Tell us what you need…"></textarea>
       </label>
 
       <button class="btn">Send Request</button>
 
-      <div id="thanks" style="display:none;margin-top:1rem;color:var(--brand);font-weight:600;text-align:center">
+      <div id="thanks"
+           style="display:none;margin-top:1rem;color:var(--brand);font-weight:600;text-align:center">
         Thanks! We’ll be in touch shortly.
       </div>
     </form>
   </div>
 
   <script>
-    if (location.hash === '#thanks'){
+    if (location.hash === '#thanks') {
       document.getElementById('thanks').style.display = 'block';
-      location.hash = '';
+      history.replaceState(null, '', 'quote.html');
     }
   </script>
 </body>
