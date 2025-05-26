@@ -304,3 +304,40 @@ h1,h2,h3,h4,h5,h6,.section-title{color:var(--text);}
 
 /* adjust sections margin-top to tighten */
 section{margin-top:3rem;}
+
+/* ===== FINAL VISIBILITY & MENU FIX ===== */
+nav{overflow:visible;}
+
+nav .has-dropdown:hover .dropdown,
+nav .has-dropdown:focus-within .dropdown,
+nav .dropdown:hover{
+  display:flex;
+}
+
+/* stronger heading colors everywhere */
+section h2, section h3, .detail-content h3, .details-content h3{
+  color:var(--text) !important;
+  text-shadow:0 1px 3px rgba(0,0,0,.7);
+}
+
+/* Quote form container darkened */
+.quote-form-container{
+  background:var(--bg-light);
+  padding:2rem 2.5rem;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  max-width:640px;
+  margin:auto;
+}
+.quote-form-container h2,
+.quote-form-container label{
+  color:var(--text);
+}
+
+/* form label bolder */
+label{font-weight:600;color:var(--text);}
+
+/* Reduce grey tone if within dark box */
+.detail p, .detail li, .details p, .details li{
+  color:var(--text-soft);
+}
