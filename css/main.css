@@ -169,3 +169,12 @@ nav .menu-toggle{
     gap:1rem;
   }
 }
+
+
+/* ───────── NAV JUSTIFY FIX ───────── */
+nav{
+  justify-content:space-between;
+}
+nav ul{
+  margin-left:auto;
+}
