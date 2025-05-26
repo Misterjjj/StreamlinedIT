@@ -225,3 +225,28 @@ nav ul{
 @media (min-width:769px){
   nav .menu-toggle{display:none;}
 }
+
+
+/* ───────── NAV BIG LINKS ───────── */
+nav ul{
+  flex:1;
+  justify-content:space-around;
+}
+nav ul li a{
+  font-size:1.25rem;
+  font-weight:600;
+  padding:1rem .5rem;
+  display:block;
+  text-wrap:nowrap;
+}
+@media (min-width:1024px){
+  nav ul li a{
+    font-size:1.35rem;
+  }
+}
+@media (max-width:768px){
+  nav ul li a{
+    font-size:1.25rem;
+    padding:.75rem 0;
+  }
+}
