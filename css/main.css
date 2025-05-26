@@ -341,3 +341,48 @@ label{font-weight:600;color:var(--text);}
 .detail p, .detail li, .details p, .details li{
   color:var(--text-soft);
 }
+
+/* ---- Mobile spacing fixes ---- */
+@media (max-width:768px){
+  .detail, .details{
+    flex-direction:column;
+    gap:1rem;
+    padding:1rem;
+  }
+  .detail img, .details img{
+    flex:none;
+    width:100%;
+    max-width:100%;
+  }
+  section{margin-top:2rem;}
+}
+
+/* tighten gap between heading/paragraph and next element */
+h2, h3, h4, .section-title{
+  margin-bottom:0.75rem;
+}
+p{margin-bottom:1rem;}
+
+/* quote card background fix */
+.quote-form-container{
+  background:var(--bg-light) !important;
+}
+.quote-form-container form{
+  background:transparent !important;
+}
+
+
+/* ----- Persistent dropdown hover fix ----- */
+nav .has-dropdown{position:relative;}
+nav .has-dropdown > a{pointer-events:auto;}
+nav .has-dropdown .dropdown{
+  display:none;
+  position:absolute;
+  left:0;
+  top:100%;
+}
+nav .has-dropdown:hover .dropdown,
+nav .has-dropdown:focus-within .dropdown,
+nav .has-dropdown .dropdown:hover{
+  display:flex;
+}
