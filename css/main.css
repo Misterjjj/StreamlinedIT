@@ -374,3 +374,35 @@ nav .dropdown{pointer-events:auto;}
 /* Tighten vertical gaps in sections */
 section{margin-top:2rem;}
 .detail, .details{gap:1rem;padding:1rem;}
+
+/* ==== Quote wrapper removal & tighter mobile spacing ==== */
+/* Remove white frame around quote */
+section#quote, .quote-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
+/* Ensure quote form container stands alone */
+.quote-form-container {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Mobile: reduce gap between image/text blocks */
+@media (max-width: 768px) {
+  .detail, .details {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem !important;
+  }
+  .detail img, .details img {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 0.5rem !important;
+  }
+  section {
+    margin-top: 1rem !important;
+  }
+}
