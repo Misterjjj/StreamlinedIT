@@ -109,49 +109,122 @@ textarea{resize:vertical;min-height:120px}
   .detail img{width:100%;max-width:100%;margin-bottom:1rem}
 }
 
-/* ───────── DARK THEME OVERRIDE ───────── */
+/* === DARK THEME VARIABLES === */
 :root{
   --brand:#3b82f6;
   --brand-light:#5ea2ff;
-  --gray:#a6b1c3;
   --text:#e8f0ff;
+  --gray:#94a3b8;
   --bg:#0e1a24;
   --bg-light:#152534;
+  --radius:.75rem;
+  --shadow:0 4px 12px rgba(0,0,0,.4);
+  font-family:system-ui,sans-serif;
 }
+/* === GLOBAL DARK BASE === */
 body{
   background:radial-gradient(circle at 50% 0%, var(--bg-light) 0%, var(--bg) 100%);
   color:var(--text);
+  line-height:1.6;
 }
-nav{
+a{color:var(--brand);}
+a:hover{color:var(--brand-light);}
+
+section, .card, .detail{
   background:var(--bg-light);
-  border-bottom:1px solid rgba(255,255,255,.1);
-  flex-direction:row!important;
+}
+h1,h2,h3,h4,h5,h6,.section-title{
+  color:var(--text);
+}
+p,li,blockquote,span{color:var(--text);}
+
+/* === NAVIGATION === */
+nav{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
   justify-content:space-between;
+  background:var(--bg-light);
   padding:.5rem 1rem;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  position:relative;
+  z-index:1000;
 }
 nav img{height:48px;}
 nav ul{
   display:flex;
-  list-style:none;
   gap:1.5rem;
-  margin-left:auto;
+  list-style:none;
   flex:1;
   justify-content:space-around;
+  margin-left:auto;
 }
 nav ul li a{
   color:var(--text);
   font-size:1.25rem;
   font-weight:600;
 }
-nav ul li a:hover{
-  color:var(--brand-light);
-}
-nav .menu-toggle{
+nav ul li a:hover{color:var(--brand-light);}
+
+.menu-toggle{
   display:none;
 }
-/* Hamburger for mobile */
+/* Dropdown */
+nav .has-dropdown .dropdown{
+  display:none;
+  position:absolute;
+  top:64px;
+  left:0;
+  min-width:220px;
+  background:var(--bg);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 4px 16px rgba(0,0,0,.6);
+  padding:.75rem 0;
+  flex-direction:column;
+}
+nav .has-dropdown:hover .dropdown{display:flex;}
+nav .dropdown a{color:var(--text);padding:.5rem 1rem;}
+nav .dropdown a p{color:var(--gray);font-size:.875rem;}
+nav .dropdown a:hover{background:rgba(255,255,255,.05);}
+
+/* === HERO === */
+.hero{
+  background:url('../images/bg-security.png') center/cover no-repeat;
+  position:relative;
+  padding:6rem 1rem;
+  text-align:center;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+.hero > *{position:relative;z-index:1;}
+
+/* === FORMS (Quote Page) === */
+input,textarea,select{
+  background:#1f2937;
+  border:1px solid #374151;
+  color:var(--text);
+  padding:.5rem .75rem;
+  border-radius:var(--radius);
+}
+input::placeholder,textarea::placeholder{color:var(--gray);}
+label{color:var(--text);}
+button,input[type="submit"]{
+  background:var(--brand);
+  color:#fff;
+  border:none;
+  border-radius:var(--radius);
+  padding:.6rem 1.25rem;
+  cursor:pointer;
+}
+button:hover,input[type="submit"]:hover{background:var(--brand-light);}
+
+/* === MOBILE NAV === */
 @media (max-width:768px){
-  nav .menu-toggle{
+  .menu-toggle{
     display:block;
     background:none;
     border:none;
@@ -169,79 +242,11 @@ nav .menu-toggle{
     background:var(--bg-light);
     padding:1rem;
     box-shadow:var(--shadow);
+    display:none;
   }
-  nav ul:not(.open){display:none;}
-}
-/* Hero background */
-.hero{
-  background-image:url('../images/bg-security.png');
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  color:var(--text);
-  padding:6rem 1rem;
-  text-align:center;
-}
-.hero h1,.hero h2,.hero h3{
-  color:var(--text);
+  nav ul.open{display:flex;}
+  nav .has-dropdown:hover .dropdown{position:static;}
 }
 
-
-/* ───────── DARK DROPDOWN & TEXT TUNE ───────── */
-nav .dropdown{
-  background:var(--bg);
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow:0 4px 16px rgba(0,0,0,.6);
-}
-nav .dropdown a{
-  color:var(--text);
-}
-nav .dropdown a p{
-  color:var(--gray);
-}
-nav .dropdown a:hover{
-  background:rgba(255,255,255,.05);
-}
-
-/* Headings contrast */
-h1,h2,h3,h4,h5,h6,.section-title{
-  color:var(--text);
-}
-
-/* Hero adjustments */
-.hero{
-  min-height:60vh;
-  position:relative;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.4);
-}
-.hero > *{
-  position:relative;
-  z-index:1;
-}
-
-
-/* ───────── CONTRAST BOOST ───────── */
-h2, .section-title{
-  color:var(--text) !important;
-}
-section, .content, .details{
-  color:var(--text);
-}
-li{
-  color:var(--text);
-}
-
-
-/* ───────── MOBILE NAV OVERLAY FIX ───────── */
-nav{
-  position:relative;
-  z-index:1000;
-}
-nav ul{
-  z-index:1000;
-}
+/* === Z-INDEX fix for mobile === */
+nav ul, nav{z-index:1000;}

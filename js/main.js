@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('nav ul');
   if(toggle && menu){
     toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', (!expanded).toString());
-      menu.classList.toggle('open');
     });
   }
 });
