@@ -406,3 +406,36 @@ section#quote, .quote-wrapper {
     margin-top: 1rem !important;
   }
 }
+
+/* === Quote page frame kill === */
+.quote-frame, .quote-wrapper, section#quote > div:first-child{
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  border:none !important;
+}
+/* make quote form full width limited max */
+.quote-form-container{
+  background:var(--bg-light) !important;
+  box-shadow:0 4px 12px rgba(0,0,0,.6);
+  border-radius:var(--radius);
+  max-width:640px;
+  margin:0 auto;
+}
+
+/* === Mobile spacing tighter === */
+@media(max-width:768px){
+  .detail, .details{
+    gap:0.25rem !important;
+    padding:0.75rem !important;
+  }
+  .detail img, .details img{
+    margin:0 0 0.5rem 0 !important;
+  }
+  h2.section-title, h2{
+    margin-bottom:0.5rem !important;
+  }
+  section{
+    margin-top:1rem !important;
+  }
+}
