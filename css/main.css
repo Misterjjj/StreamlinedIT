@@ -342,47 +342,35 @@ label{font-weight:600;color:var(--text);}
   color:var(--text-soft);
 }
 
-/* ---- Mobile spacing fixes ---- */
-@media (max-width:768px){
-  .detail, .details{
-    flex-direction:column;
-    gap:1rem;
-    padding:1rem;
-  }
-  .detail img, .details img{
-    flex:none;
-    width:100%;
-    max-width:100%;
-  }
-  section{margin-top:2rem;}
-}
+/* === FINAL CLEANUP 2025‑05‑25 === */
 
-/* tighten gap between heading/paragraph and next element */
-h2, h3, h4, .section-title{
-  margin-bottom:0.75rem;
+/* Quote container – remove white frame */
+section#quote, .quote-wrapper{
+  background:transparent !important;
+  box-shadow:none !important;
 }
-p{margin-bottom:1rem;}
-
-/* quote card background fix */
 .quote-form-container{
   background:var(--bg-light) !important;
-}
-.quote-form-container form{
-  background:transparent !important;
+  border:1px solid rgba(255,255,255,.05);
+  box-shadow:0 6px 18px rgba(0,0,0,.6);
 }
 
-
-/* ----- Persistent dropdown hover fix ----- */
+/* Persistent dropdown (hover only disappears when leaving both triggers) */
 nav .has-dropdown{position:relative;}
-nav .has-dropdown > a{pointer-events:auto;}
 nav .has-dropdown .dropdown{
   display:none;
   position:absolute;
-  left:0;
   top:100%;
+  left:0;
+  margin-top:0;          /* eliminates hover gap */
 }
 nav .has-dropdown:hover .dropdown,
 nav .has-dropdown:focus-within .dropdown,
-nav .has-dropdown .dropdown:hover{
+nav .dropdown:hover{
   display:flex;
 }
+nav .dropdown{pointer-events:auto;}
+
+/* Tighten vertical gaps in sections */
+section{margin-top:2rem;}
+.detail, .details{gap:1rem;padding:1rem;}
