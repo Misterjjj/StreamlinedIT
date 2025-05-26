@@ -185,3 +185,41 @@ nav .menu-toggle{
 .hero h1,.hero h2,.hero h3{
   color:var(--text);
 }
+
+
+/* ───────── DARK DROPDOWN & TEXT TUNE ───────── */
+nav .dropdown{
+  background:var(--bg);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 4px 16px rgba(0,0,0,.6);
+}
+nav .dropdown a{
+  color:var(--text);
+}
+nav .dropdown a p{
+  color:var(--gray);
+}
+nav .dropdown a:hover{
+  background:rgba(255,255,255,.05);
+}
+
+/* Headings contrast */
+h1,h2,h3,h4,h5,h6,.section-title{
+  color:var(--text);
+}
+
+/* Hero adjustments */
+.hero{
+  min-height:60vh;
+  position:relative;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.4);
+}
+.hero > *{
+  position:relative;
+  z-index:1;
+}
