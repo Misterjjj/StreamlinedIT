@@ -141,3 +141,31 @@ textarea{resize:vertical;min-height:120px}
 @media (min-width: 769px){
   nav .menu-toggle{display:none;}
 }
+
+
+/* ───────── NAV LAYOUT UPDATE ───────── */
+nav{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  padding:0.5rem 1rem;
+}
+nav img{order:1;}
+nav ul{order:2;}
+nav .menu-toggle{
+  order:3;
+  margin-left:auto;
+}
+/* For desktop show nav list inline */
+@media (min-width: 769px){
+  nav ul{
+    display:flex;
+    gap:1.5rem;
+  }
+}
+/* For mobile ensure space-between look */
+@media (max-width:768px){
+  nav{
+    gap:1rem;
+  }
+}
